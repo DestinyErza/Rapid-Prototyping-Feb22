@@ -9,9 +9,26 @@ namespace Proto1
     {
         public TMP_Text scoreText;
 
+        public TMP_Text bestTimeText;
+        public TMP_Text currentTimeText;
+
         public void UpdateScore(int _score)
         {
             scoreText.text = "Score: " + _score;
+        }
+
+
+        public void UpdateCurrentTime(float _time)
+        {
+            currentTimeText.text ="CurrentTime" + _time.ToString("F3");
+        }
+
+        public void UpdateBestTime(float _time, bool _firstTime = false)
+        {
+            if (_firstTime)
+                bestTimeText.text = "No Best Time Set Yet";
+            else
+                bestTimeText.text = "Best Time: " + _time.ToString("F3");
         }
     }
 }
